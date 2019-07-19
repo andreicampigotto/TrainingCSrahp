@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsertAndRemoveInList", "InsertAndRemoveInList\InsertAndRemoveInList.csproj", "{00F20C1A-B087-4135-84B9-C666B18BF0EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00F20C1A-B087-4135-84B9-C666B18BF0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00F20C1A-B087-4135-84B9-C666B18BF0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00F20C1A-B087-4135-84B9-C666B18BF0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00F20C1A-B087-4135-84B9-C666B18BF0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7210CCD-D4A5-4E27-B496-BEC4A7EE069E}
+	EndGlobalSection
+EndGlobal

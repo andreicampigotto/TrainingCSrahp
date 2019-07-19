@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriaAdicionaValoresAumentaLista", "CriaAdicionaValoresAumentaLista\CriaAdicionaValoresAumentaLista.csproj", "{53BFA992-4082-41BA-8DFA-97D844AE3DDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53BFA992-4082-41BA-8DFA-97D844AE3DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53BFA992-4082-41BA-8DFA-97D844AE3DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53BFA992-4082-41BA-8DFA-97D844AE3DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53BFA992-4082-41BA-8DFA-97D844AE3DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE529059-F340-4F68-B33C-2A4DEC315C20}
+	EndGlobalSection
+EndGlobal
