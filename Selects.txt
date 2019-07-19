@@ -1,0 +1,75 @@
+select al.Nome,
+       SUM(CONVERT(money,fr.Ativo)) /  CONVERT(money,count(fr.Ativo)) * 100
+	   from Alunos al 
+inner join Frequencia fr on al.Id = fr.Aluno
+group by al.Nome
+
+
+select 
+	AL.Nome,
+	SUM(NT.Nota) / COUNT(*) as 'Media'
+from Alunos AL
+inner join Notas NT on AL.Id = NT.Aluno
+group by AL.Nome
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+select AL.Nome,
+       IIF((SUM(CONVERT(money,FR.Ativo)) / CONVERT(money,count(fr.Ativo)) * 100) >= 75, 'Aprovado','Reprovado') as 'Fequencia'
+	   from Alunos AL 
+inner join Frequencia FR on AL.Id = FR.Aluno
+group by AL.Nome
+
+
+select * from contato;
+
+select  count(iif((ativo=1),1,null)) as 'presenca', count(iif((ativo=0),1,null)) as 'faltas',
+iif(7 >= 7 and 75>=75, 'aprovado', 'Reprovado') as 'status'
+from contato
+
+
+go
+
+
+select  count(case when ativo=1 then 1 else null end)
+from contato
+
+--------------------------------------------------------------------------------------------------------------------
+
+select 
+
+        AL.Nome,
+		SUM(NT.Nota1) / COUNT(fr.ativo) as 'Média',
+		IIF((SUM(NT.Nota1) / COUNT(NT.Ativo) >= 7) 'Aprovado' , 'Reprovado') as 'Status Media',
+        IIF(((SUM(CONVERT(money,FR.Ativo)) / CONVERT(money,count(fr.Ativo)) * 100) >= 75, 'Aprovado','Reprovado') as 'Fequencia'
+
+	   from Aluno AL 
+	   inner join Frequencia fr on al.Id = fr.aluno
+       inner join Notas1 NT on AL.Id = NT.Aluno
+group by AL.Nome
+
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+select 
+	AL.Nome,
+	IIF(SUM(NT.Nota) / COUNT(*) >= 7
+	AND (SUM(CONVERT(money,FR.Ativo)) / CONVERT(money,count(FR.Ativo)) * 100) >= 75,'Aprovado','Reprovado') as 'Status'
+	from Alunos AL
+inner join Notas NT on AL.Id = NT.Aluno
+inner join Frequencia FR on fr.Aluno = AL.Id
+group by AL.Nome
+
+****
+
+select 
+	AL.Nome,
+	SUM(NT.Nota) / COUNT(*) as 'Media',
+	IIF((SUM(CONVERT(money,FR.Ativo)) / CONVERT(money,count(FR.Ativo)) * 100) >= 75, 'Frequencia suficiente','Frequencia insuficiente') as 'Fequencia',
+	IIF(SUM(NT.Nota) / COUNT(*) >= 7
+	AND (SUM(CONVERT(money,FR.Ativo)) / CONVERT(money,count(FR.Ativo)) * 100) >= 75,'Aprovado','Reprovado') as 'Status Final'
+	from Alunos AL
+inner join Notas NT on AL.Id = NT.Aluno
+inner join Frequencia FR on FR.Aluno = AL.Id
+group by AL.Nome
