@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{41CAF31F-1E6B-4E7B-BE90-4EBE4E01028B}</ProjectGuid>
+    <ProjectGuid>{ED24DE22-B133-4F54-B272-F3F2EE476852}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CriacaoDeLista</RootNamespace>
-    <AssemblyName>CriacaoDeLista</AssemblyName>
+    <RootNamespace>Organizando_a_Criacao_de_Lista</RootNamespace>
+    <AssemblyName>Organizando_a_Criacao_de_Lista</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Biblioteca\CriaLista.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CriacaoDeLista_ComClass\CriacaoDeLista_ComClass.csproj">
+      <Project>{45f217cd-f145-44b6-8d4c-ef8e429691ab}</Project>
+      <Name>CriacaoDeLista_ComClass</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

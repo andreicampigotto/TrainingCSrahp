@@ -1,22 +1,15 @@
-﻿using MeuCarro4x4Class.MyFirstClass;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MeuCarro4x4Class
+namespace CriacaoDeLista_ComClass
 {
 	class Program
 	{
 		static void Main(string[] args)
 		{
-			var teste = new Carro();
-
-			teste++;
-
-			teste.MostrarCarro();
-			Console.ReadKey();
 		}
 	}
 }

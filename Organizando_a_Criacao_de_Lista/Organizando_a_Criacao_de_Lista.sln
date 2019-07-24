@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29020.237
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Organizando_a_Criacao_de_Lista", "Organizando_a_Criacao_de_Lista\Organizando_a_Criacao_de_Lista.csproj", "{ED24DE22-B133-4F54-B272-F3F2EE476852}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriacaoDeLista_ComClass", "CriacaoDeLista_ComClass\CriacaoDeLista_ComClass.csproj", "{45F217CD-F145-44B6-8D4C-EF8E429691AB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED24DE22-B133-4F54-B272-F3F2EE476852}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED24DE22-B133-4F54-B272-F3F2EE476852}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED24DE22-B133-4F54-B272-F3F2EE476852}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED24DE22-B133-4F54-B272-F3F2EE476852}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F217CD-F145-44B6-8D4C-EF8E429691AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F217CD-F145-44B6-8D4C-EF8E429691AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F217CD-F145-44B6-8D4C-EF8E429691AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F217CD-F145-44B6-8D4C-EF8E429691AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DCE1E22A-82F3-43D3-8EA6-27CF398EC159}
+	EndGlobalSection
+EndGlobal

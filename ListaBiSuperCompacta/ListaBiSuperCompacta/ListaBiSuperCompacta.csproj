@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{41CAF31F-1E6B-4E7B-BE90-4EBE4E01028B}</ProjectGuid>
+    <ProjectGuid>{94916D4E-3FB3-4EA7-8379-50414CCF5A4A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CriacaoDeLista</RootNamespace>
-    <AssemblyName>CriacaoDeLista</AssemblyName>
+    <RootNamespace>ListaBiSuperCompacta</RootNamespace>
+    <AssemblyName>ListaBiSuperCompacta</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BibliotecaListaBi\ListaBi.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
