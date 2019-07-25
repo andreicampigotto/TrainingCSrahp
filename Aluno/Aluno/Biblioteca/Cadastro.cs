@@ -28,7 +28,7 @@ namespace Escola
 		/// </summary>
 		/// <param name="numSelecionado"> retorna para chamar no menu</param>
 		/// <returns></returns>
-		public void MostraMenu()
+		public int MostraMenu()
 		{
 			Console.Clear();
 			Cabecalho();
@@ -39,7 +39,7 @@ namespace Escola
 							  $"\n3 - Altera notas " +
 							  $"\n4 - Apaga registro " +
 							  $"\n5 - Sai do sistema ");
-			FuncoesMenu(Convert.ToInt32(Console.ReadLine()));
+			return (Convert.ToInt32(Console.ReadLine());
 			//return Convert.ToInt32(Console.ReadLine());
 		}
 
@@ -59,7 +59,7 @@ namespace Escola
 			{
 				if (Alunos[i, 0] != null)
 					continue;
-				Console.Clear();
+
 				Alunos[i, 0] = (IdParaLista++).ToString();
 
 				Console.WriteLine("Insira o nome do aluno: ");
@@ -202,23 +202,26 @@ namespace Escola
 		/// 
 		/// </summary>
 		/// <param name="numSelecionado"></param>
-		public void FuncoesMenu(int numSelecionado)
+		public void FuncoesMenu()
 		{
-			//MostraMenu();
-			switch (numSelecionado)
+			while (true)
 			{
-				case 1: { MostrarInformacoes(Alunos); break; }
+				//MostraMenu();
+				switch (MostraMenu())
+				{
+					case 1: { MostrarInformacoes(Alunos); break; }
 
-				case 2: { InseriRegistros(ref Alunos, ref IdParaLista); break; }
+					case 2: { InseriRegistros(ref Alunos, ref IdParaLista); break; }
 
-				case 3: { AlteraRegistros(Alunos); break; }
+					case 3: { AlteraRegistros(Alunos); break; }
 
-				case 4: { ApagaRegistros(ref Alunos); break; }
+					case 4: { ApagaRegistros(ref Alunos); break; }
 
-				case 5:
-					{
-						return;
-					}
+					case 5:
+						{
+							return;
+						}
+				}
 			}
 		}
 

@@ -28,7 +28,7 @@ namespace MostraBoletim
 				opces.ApagaRegistros(ref Alunos, ref IdParaLista);
 
 			opces.InseriRegistros(ref Alunos, ref IdParaLista);*/
-			opces.MostraMenu();
+			opces.FuncoesMenu();
 			Console.ReadKey();
 		}
 	}
