@@ -30,6 +30,7 @@ namespace Escola
 		/// <returns></returns>
 		public void MostraMenu()
 		{
+			Console.Clear();
 			Cabecalho();
 
 			Console.WriteLine($"Menu principal... o que você deseja fazer?" +
@@ -42,8 +43,16 @@ namespace Escola
 			//return Convert.ToInt32(Console.ReadLine());
 		}
 
-		public void InseriRegistros(ref string [,]Alunos, ref int IdParaLista)
+		/// <summary>
+		/// Menu para Inserir Novos registros
+		/// </summary>
+		/// <param name="Alunos"></param>
+		/// <param name="IdParaLista"></param>
+		public void InseriRegistros(ref string[,] Alunos, ref int IdParaLista)
 		{
+			Console.Clear();
+			Cabecalho();
+			Console.WriteLine("Menu de Inserção: ");
 			Alunos = new string[2, 5];
 
 			for (int i = 0; i < Alunos.GetLength(0); i++)
@@ -85,13 +94,60 @@ namespace Escola
 				Console.WriteLine(string.Format("Registro ID: {0} - Aluno: {1} - Média: {2} - Frequencia: {3} - \nSituação: {4}%", Alunos[i, 0], Alunos[i, 1], Alunos[i, 2], Alunos[i, 3], Alunos[i, 4]));
 		}
 
-		public void AlteraRegistro()
+		public void AlteraRegistros(string[,] Alunos)
 		{
+			Console.Clear();
+			Cabecalho();
+			Console.WriteLine("Menu de Alteração:");
+
+			Console.WriteLine("Informe o Id do Aluno para Alterar o registro: ");
+			var capturaId = Console.ReadLine();
+			for (int i = 0; i < Alunos.GetLength(0); i++)
+			{
+				if (capturaId == Alunos[i, 0])
+				{
+					Console.Clear();
+					Alunos[i, 0] = (IdParaLista++).ToString();
+
+					Console.WriteLine("Insira o nome do aluno: ");
+					string nomeAluno = Console.ReadLine();
+					Alunos[i, 1] = nomeAluno;
+
+					Console.WriteLine("Insira a primeira nota do aluno: ");
+					double.TryParse(Console.ReadLine(), out double nota1);
+
+					Console.WriteLine("Insira a segunda nota do aluno: ");
+					double.TryParse(Console.ReadLine(), out double nota2);
+
+					Console.WriteLine("Insira a terceira nota do aluno: ");
+					double.TryParse(Console.ReadLine(), out double nota3);
+
+					double media = formulas.CalculaMedia(nota1, nota2, nota3);
+					Alunos[i, 2] = media.ToString();
+
+					Console.WriteLine("Insira o total de aulas: ");
+					int.TryParse(Console.ReadLine(), out int aulas);
+
+					Console.WriteLine("Insira o total de faltas do aluno: ");
+					int.TryParse(Console.ReadLine(), out int faltas);
+
+					int frequencia = formulas.CalculaFrequencia(aulas, faltas);
+					Alunos[i, 3] = frequencia.ToString();
+
+					Alunos[i, 4] = formulas.SituacaoAluno(media, frequencia);
+
+				}
+			}
+			for (int i = 0; i < Alunos.GetLength(0); i++)
+				Console.WriteLine(string.Format("Registro ID: {0} - Aluno: {1} - Média: {2} - Frequencia: {3} - \nSituação: {4}%", Alunos[i, 0], Alunos[i, 1], Alunos[i, 2], Alunos[i, 3], Alunos[i, 4]));
 
 		}
 
 		public void ApagaRegistros(ref string[,] Alunos)
 		{
+			Console.Clear();
+			Cabecalho();
+			Console.WriteLine("Menu de Remoção: ");
 			Console.WriteLine("Informe o Id do Aluno para remvoer um registro: ");
 			var capturaId = Console.ReadLine();
 			for (int i = 0; i < Alunos.GetLength(0); i++)
@@ -117,8 +173,11 @@ namespace Escola
 				Console.WriteLine(string.Format("Registro ID: {0} - Aluno: {1} - Média: {2} - Frequencia: {3} - Situação: {4}", Alunos[i, 0], Alunos[i, 1], Alunos[i, 2], Alunos[i, 3], Alunos[i, 4]));
 		}
 
-		public void MostrarInformacoes(string[,]Alunos)
+		public void MostrarInformacoes(string[,] Alunos)
 		{
+			Console.Clear();
+			Cabecalho();
+			Console.WriteLine("Lista de Informações: ");
 			for (int i = 0; i < Alunos.GetLength(0); i++)
 				Console.WriteLine(string.Format("Registro ID: {0} - Aluno: {1} - Média: {2} - Frequencia: {3} - Situação: {4}", Alunos[i, 0], Alunos[i, 1], Alunos[i, 2], Alunos[i, 3], Alunos[i, 4]));
 
@@ -136,18 +195,16 @@ namespace Escola
 
 				case 2: { InseriRegistros(ref Alunos, ref IdParaLista); break; }
 
-				case 3: {/* AlteraRegistros(ref Alunos, ref IdParaLista)*/; break; }
+				case 3: { AlteraRegistros(Alunos); break; }
 
 				case 4: { ApagaRegistros(ref Alunos); break; }
 
 				case 5:
-					{ 
+					{
 						return;
 					}
 			}
 		}
-
-
 
 	}
 
