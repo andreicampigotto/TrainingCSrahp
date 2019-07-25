@@ -94,6 +94,10 @@ namespace Escola
 				Console.WriteLine(string.Format("Registro ID: {0} - Aluno: {1} - Média: {2} - Frequencia: {3} - \nSituação: {4}%", Alunos[i, 0], Alunos[i, 1], Alunos[i, 2], Alunos[i, 3], Alunos[i, 4]));
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="Alunos"></param>
 		public void AlteraRegistros(string[,] Alunos)
 		{
 			Console.Clear();
@@ -143,6 +147,10 @@ namespace Escola
 
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="Alunos"></param>
 		public void ApagaRegistros(ref string[,] Alunos)
 		{
 			Console.Clear();
@@ -173,6 +181,10 @@ namespace Escola
 				Console.WriteLine(string.Format("Registro ID: {0} - Aluno: {1} - Média: {2} - Frequencia: {3} - Situação: {4}", Alunos[i, 0], Alunos[i, 1], Alunos[i, 2], Alunos[i, 3], Alunos[i, 4]));
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="Alunos"></param>
 		public void MostrarInformacoes(string[,] Alunos)
 		{
 			Console.Clear();
@@ -186,6 +198,10 @@ namespace Escola
 			Console.ReadKey();
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="numSelecionado"></param>
 		public void FuncoesMenu(int numSelecionado)
 		{
 			//MostraMenu();
