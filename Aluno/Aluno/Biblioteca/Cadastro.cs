@@ -39,7 +39,7 @@ namespace Escola
 							  $"\n3 - Altera notas " +
 							  $"\n4 - Apaga registro " +
 							  $"\n5 - Sai do sistema ");
-			return (Convert.ToInt32(Console.ReadLine());
+			return Convert.ToInt32(Console.ReadLine());
 			//return Convert.ToInt32(Console.ReadLine());
 		}
 
