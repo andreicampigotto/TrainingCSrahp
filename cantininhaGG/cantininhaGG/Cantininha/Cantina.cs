@@ -10,7 +10,7 @@ namespace cantininhaGG.Classes
 	{
 
 		double mesada = 0;
-
+		bool aux = true; 
 		public double Saldo { get { return mesada; } }
 
 		public Cantina()
