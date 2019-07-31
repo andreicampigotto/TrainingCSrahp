@@ -26,7 +26,21 @@ namespace Carros
 
 		private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
-			//var carSelect = 
+			var vendasSelect = ((System.Data.DataRowView)
+			   this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+			   as Carros.QuerrysInnerJoinDataSet.VendasRow;
+
+			switch (e.ColumnIndex)
+			{
+				case 0:
+					{
+						this.vendasTableAdapter.DeleteQuery(vendasSelect.Id);
+						this.vendasTableAdapter.SelectQuery(this.querrysInnerJoinDataSet.Vendas);
+					}
+					break;
+			}
+			this.vendasTableAdapter.SelectQuery(querrysInnerJoinDataSet.Vendas);			
 		}
 	}
 }
+

@@ -665,6 +665,7 @@ namespace Carros {
                 this.columnUsuAlt.AllowDBNull = false;
                 this.columnDatInc.AllowDBNull = false;
                 this.columnDatAlt.AllowDBNull = false;
+                this.columnDeletCommand.DefaultValue = ((string)("Deletar"));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3714,7 +3715,7 @@ SELECT Id, Usuario, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Usuarios WHERE (I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual QuerrysInnerJoinDataSet.UsuariosDataTable GetDataBy() {
+        public virtual QuerrysInnerJoinDataSet.UsuariosDataTable GetDataBy1() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             QuerrysInnerJoinDataSet.UsuariosDataTable dataTable = new QuerrysInnerJoinDataSet.UsuariosDataTable();
             this.Adapter.Fill(dataTable);
@@ -4144,7 +4145,7 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual QuerrysInnerJoinDataSet.VendasDataTable GetDataBy() {
+        public virtual QuerrysInnerJoinDataSet.VendasDataTable GetDataBy1() {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             QuerrysInnerJoinDataSet.VendasDataTable dataTable = new QuerrysInnerJoinDataSet.VendasDataTable();
             this.Adapter.Fill(dataTable);

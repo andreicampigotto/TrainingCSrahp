@@ -23,5 +23,24 @@ namespace Carros
 			this.carrosTableAdapter.SelectQuery(this.querrysInnerJoinDataSet.Carros);
 
 		}
+
+		private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			var carrosSelect = ((System.Data.DataRowView)
+			   this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
+			   as Carros.QuerrysInnerJoinDataSet.CarrosRow;
+
+
+			switch (e.ColumnIndex)
+			{
+				case 0:
+					{
+						this.carrosTableAdapter.DeleteQuery(carrosSelect.Id);
+						this.carrosTableAdapter.SelectQuery(this.querrysInnerJoinDataSet.Carros);
+					}
+					break;
+			}
+			this.carrosTableAdapter.SelectQuery(querrysInnerJoinDataSet.Carros);
+		}
 	}
 }

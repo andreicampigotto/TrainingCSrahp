@@ -30,8 +30,16 @@ namespace Carros
 			   this.dataGridView1.Rows[e.RowIndex].DataBoundItem).Row
 			   as Carros.QuerrysInnerJoinDataSet.UsuariosRow;
 
-			//this.marcasTableAdapter.DeleteQuery(marcasSelect.Id);
-			//this.marcasTableAdapter.CustomQuery(this.querysInnerJoinDataSet1.Marcas);
+			switch (e.ColumnIndex)
+			{
+				case 0:
+					{
+						this.usuariosTableAdapter.DeleteQuery(usuarioSelect.Id);
+						this.usuariosTableAdapter.SelectQuery(this.querrysInnerJoinDataSet.Usuarios);
+					}
+					break;
+			}
+			this.usuariosTableAdapter.SelectQuery(querrysInnerJoinDataSet.Usuarios);
 		}
 	}
 }
