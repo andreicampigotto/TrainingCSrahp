@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Edicao\frmEdicaoCarro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Edicao\frmEdicaoCarro.Designer.cs">
+      <DependentUpon>frmEdicaoCarro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frCarros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     <Compile Include="Vendas.Designer.cs">
       <DependentUpon>Vendas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Edicao\frmEdicaoCarro.resx">
+      <DependentUpon>frmEdicaoCarro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frCarros.resx">
       <DependentUpon>frCarros.cs</DependentUpon>
     </EmbeddedResource>

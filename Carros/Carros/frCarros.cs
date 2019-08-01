@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Carros.Edicao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,8 +36,17 @@ namespace Carros
 			{
 				case 0:
 					{
+						frmEdicaoCarro editarCaaro = new frmEdicaoCarro();
+						editarCaaro.CarrosRow = carrosSelect;
+						editarCaaro.ShowDialog();
+						//this.carrosTableAdapter.DeleteQuery(carrosSelect.Id);
+						//this.carrosTableAdapter.SelectQuery(this.querrysInnerJoinDataSet.Carros);
+					}
+					break;
+				case 7:
+					{
 						this.carrosTableAdapter.DeleteQuery(carrosSelect.Id);
-						this.carrosTableAdapter.SelectQuery(this.querrysInnerJoinDataSet.Carros);
+						//this.carrosTableAdapter.SelectQuery(this.querrysInnerJoinDataSet.Carros);
 					}
 					break;
 			}

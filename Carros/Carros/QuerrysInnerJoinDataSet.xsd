@@ -181,6 +181,14 @@ SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM Marcas WHERE (Id = @
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
+              <DbSource ConnectionRef="QuerrysInnerJoinConnectionString (Settings)" DbObjectName="QuerrysInnerJoin.dbo.Marcas" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, Nome, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM dbo.Marcas WHERE Ativo = 1</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
             </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UsuariosTableAdapter" GeneratorDataComponentClassName="UsuariosTableAdapter" Name="Usuarios" UserDataComponentName="UsuariosTableAdapter">
@@ -383,7 +391,7 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
   <xs:element name="QuerrysInnerJoinDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="QuerrysInnerJoinDataSet" msprop:Generator_UserDSName="QuerrysInnerJoinDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Carros" msprop:Generator_TableClassName="CarrosDataTable" msprop:Generator_TableVarName="tableCarros" msprop:Generator_TablePropName="Carros" msprop:Generator_RowDeletingName="CarrosRowDeleting" msprop:Generator_RowChangingName="CarrosRowChanging" msprop:Generator_RowEvHandlerName="CarrosRowChangeEventHandler" msprop:Generator_RowDeletedName="CarrosRowDeleted" msprop:Generator_UserTableName="Carros" msprop:Generator_RowChangedName="CarrosRowChanged" msprop:Generator_RowEvArgName="CarrosRowChangeEvent" msprop:Generator_RowClassName="CarrosRow">
+        <xs:element name="Carros" msprop:Generator_TableClassName="CarrosDataTable" msprop:Generator_TableVarName="tableCarros" msprop:Generator_RowChangedName="CarrosRowChanged" msprop:Generator_TablePropName="Carros" msprop:Generator_RowDeletingName="CarrosRowDeleting" msprop:Generator_RowChangingName="CarrosRowChanging" msprop:Generator_RowEvHandlerName="CarrosRowChangeEventHandler" msprop:Generator_RowDeletedName="CarrosRowDeleted" msprop:Generator_RowClassName="CarrosRow" msprop:Generator_UserTableName="Carros" msprop:Generator_RowEvArgName="CarrosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -405,7 +413,7 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Marcas" msprop:Generator_TableClassName="MarcasDataTable" msprop:Generator_TableVarName="tableMarcas" msprop:Generator_TablePropName="Marcas" msprop:Generator_RowDeletingName="MarcasRowDeleting" msprop:Generator_RowChangingName="MarcasRowChanging" msprop:Generator_RowEvHandlerName="MarcasRowChangeEventHandler" msprop:Generator_RowDeletedName="MarcasRowDeleted" msprop:Generator_UserTableName="Marcas" msprop:Generator_RowChangedName="MarcasRowChanged" msprop:Generator_RowEvArgName="MarcasRowChangeEvent" msprop:Generator_RowClassName="MarcasRow">
+        <xs:element name="Marcas" msprop:Generator_TableClassName="MarcasDataTable" msprop:Generator_TableVarName="tableMarcas" msprop:Generator_RowChangedName="MarcasRowChanged" msprop:Generator_TablePropName="Marcas" msprop:Generator_RowDeletingName="MarcasRowDeleting" msprop:Generator_RowChangingName="MarcasRowChanging" msprop:Generator_RowEvHandlerName="MarcasRowChangeEventHandler" msprop:Generator_RowDeletedName="MarcasRowDeleted" msprop:Generator_RowClassName="MarcasRow" msprop:Generator_UserTableName="Marcas" msprop:Generator_RowEvArgName="MarcasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -425,7 +433,7 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Usuarios" msprop:Generator_TableClassName="UsuariosDataTable" msprop:Generator_TableVarName="tableUsuarios" msprop:Generator_TablePropName="Usuarios" msprop:Generator_RowDeletingName="UsuariosRowDeleting" msprop:Generator_RowChangingName="UsuariosRowChanging" msprop:Generator_RowEvHandlerName="UsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuariosRowDeleted" msprop:Generator_UserTableName="Usuarios" msprop:Generator_RowChangedName="UsuariosRowChanged" msprop:Generator_RowEvArgName="UsuariosRowChangeEvent" msprop:Generator_RowClassName="UsuariosRow">
+        <xs:element name="Usuarios" msprop:Generator_TableClassName="UsuariosDataTable" msprop:Generator_TableVarName="tableUsuarios" msprop:Generator_RowChangedName="UsuariosRowChanged" msprop:Generator_TablePropName="Usuarios" msprop:Generator_RowDeletingName="UsuariosRowDeleting" msprop:Generator_RowChangingName="UsuariosRowChanging" msprop:Generator_RowEvHandlerName="UsuariosRowChangeEventHandler" msprop:Generator_RowDeletedName="UsuariosRowDeleted" msprop:Generator_RowClassName="UsuariosRow" msprop:Generator_UserTableName="Usuarios" msprop:Generator_RowEvArgName="UsuariosRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -445,7 +453,7 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Vendas" msprop:Generator_TableClassName="VendasDataTable" msprop:Generator_TableVarName="tableVendas" msprop:Generator_TablePropName="Vendas" msprop:Generator_RowDeletingName="VendasRowDeleting" msprop:Generator_RowChangingName="VendasRowChanging" msprop:Generator_RowEvHandlerName="VendasRowChangeEventHandler" msprop:Generator_RowDeletedName="VendasRowDeleted" msprop:Generator_UserTableName="Vendas" msprop:Generator_RowChangedName="VendasRowChanged" msprop:Generator_RowEvArgName="VendasRowChangeEvent" msprop:Generator_RowClassName="VendasRow">
+        <xs:element name="Vendas" msprop:Generator_TableClassName="VendasDataTable" msprop:Generator_TableVarName="tableVendas" msprop:Generator_RowChangedName="VendasRowChanged" msprop:Generator_TablePropName="Vendas" msprop:Generator_RowDeletingName="VendasRowDeleting" msprop:Generator_RowChangingName="VendasRowChanging" msprop:Generator_RowEvHandlerName="VendasRowChangeEventHandler" msprop:Generator_RowDeletedName="VendasRowDeleted" msprop:Generator_RowClassName="VendasRow" msprop:Generator_UserTableName="Vendas" msprop:Generator_RowEvArgName="VendasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -482,8 +490,8 @@ SELECT Id, Carro, Quantidade, Valor, Ativo, UsuInc, UsuAlt, DatInc, DatAlt FROM 
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Carros_Marcas" msdata:parent="Marcas" msdata:child="Carros" msdata:parentkey="Id" msdata:childkey="Marca" msprop:Generator_UserChildTable="Carros" msprop:Generator_ChildPropName="GetCarrosRows" msprop:Generator_UserRelationName="FK_Carros_Marcas" msprop:Generator_RelationVarName="relationFK_Carros_Marcas" msprop:Generator_UserParentTable="Marcas" msprop:Generator_ParentPropName="MarcasRow" />
-      <msdata:Relationship name="FK_Vendas_Carros" msdata:parent="Carros" msdata:child="Vendas" msdata:parentkey="Id" msdata:childkey="Carro" msprop:Generator_UserChildTable="Vendas" msprop:Generator_ChildPropName="GetVendasRows" msprop:Generator_UserRelationName="FK_Vendas_Carros" msprop:Generator_ParentPropName="CarrosRow" msprop:Generator_RelationVarName="relationFK_Vendas_Carros" msprop:Generator_UserParentTable="Carros" />
+      <msdata:Relationship name="FK_Carros_Marcas" msdata:parent="Marcas" msdata:child="Carros" msdata:parentkey="Id" msdata:childkey="Marca" msprop:Generator_UserChildTable="Carros" msprop:Generator_ChildPropName="GetCarrosRows" msprop:Generator_UserRelationName="FK_Carros_Marcas" msprop:Generator_ParentPropName="MarcasRow" msprop:Generator_RelationVarName="relationFK_Carros_Marcas" msprop:Generator_UserParentTable="Marcas" />
+      <msdata:Relationship name="FK_Vendas_Carros" msdata:parent="Carros" msdata:child="Vendas" msdata:parentkey="Id" msdata:childkey="Carro" msprop:Generator_UserChildTable="Vendas" msprop:Generator_ChildPropName="GetVendasRows" msprop:Generator_UserRelationName="FK_Vendas_Carros" msprop:Generator_RelationVarName="relationFK_Vendas_Carros" msprop:Generator_UserParentTable="Carros" msprop:Generator_ParentPropName="CarrosRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>
