@@ -19,7 +19,7 @@ namespace Carros.Edicao
 
 		public Carros.QuerrysInnerJoinDataSet.CarrosRow CarrosRow;
 
-		private void FrmEdicaoCarro_Load(object sender, EventArgs e)
+	private void FrmEdicaoCarro_Load(object sender, EventArgs e)
 		{
 			// TODO: This line of code loads data into the 'querrysInnerJoinDataSet.Marcas' table. You can move, or remove it, as needed.
 			this.marcasTableAdapter.FillBy(this.querrysInnerJoinDataSet.Marcas);

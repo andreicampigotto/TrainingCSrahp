@@ -38,18 +38,15 @@
 			this.querrysInnerJoinDataSet = new Carros.QuerrysInnerJoinDataSet();
 			this.lbMarca = new System.Windows.Forms.Label();
 			this.marcasTableAdapter = new Carros.QuerrysInnerJoinDataSetTableAdapters.MarcasTableAdapter();
-			this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-			this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.btnSalvar = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.querrysInnerJoinDataSet)).BeginInit();
-			this.fillByToolStrip.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// lbModelo
 			// 
 			this.lbModelo.AutoSize = true;
-			this.lbModelo.Location = new System.Drawing.Point(13, 42);
+			this.lbModelo.Location = new System.Drawing.Point(12, 9);
 			this.lbModelo.Name = "lbModelo";
 			this.lbModelo.Size = new System.Drawing.Size(54, 17);
 			this.lbModelo.TabIndex = 0;
@@ -58,7 +55,7 @@
 			// lbAno
 			// 
 			this.lbAno.AutoSize = true;
-			this.lbAno.Location = new System.Drawing.Point(37, 75);
+			this.lbAno.Location = new System.Drawing.Point(36, 42);
 			this.lbAno.Name = "lbAno";
 			this.lbAno.Size = new System.Drawing.Size(33, 17);
 			this.lbAno.TabIndex = 1;
@@ -66,7 +63,7 @@
 			// 
 			// txModelo
 			// 
-			this.txModelo.Location = new System.Drawing.Point(73, 39);
+			this.txModelo.Location = new System.Drawing.Point(72, 6);
 			this.txModelo.Name = "txModelo";
 			this.txModelo.Size = new System.Drawing.Size(263, 22);
 			this.txModelo.TabIndex = 2;
@@ -74,7 +71,7 @@
 			// detData
 			// 
 			this.detData.CustomFormat = "dd/MM/yyyy";
-			this.detData.Location = new System.Drawing.Point(73, 70);
+			this.detData.Location = new System.Drawing.Point(72, 37);
 			this.detData.Name = "detData";
 			this.detData.Size = new System.Drawing.Size(263, 22);
 			this.detData.TabIndex = 3;
@@ -84,7 +81,7 @@
 			this.cbMarca.DataSource = this.marcasBindingSource;
 			this.cbMarca.DisplayMember = "Nome";
 			this.cbMarca.FormattingEnabled = true;
-			this.cbMarca.Location = new System.Drawing.Point(73, 98);
+			this.cbMarca.Location = new System.Drawing.Point(72, 65);
 			this.cbMarca.Name = "cbMarca";
 			this.cbMarca.Size = new System.Drawing.Size(263, 24);
 			this.cbMarca.TabIndex = 4;
@@ -103,7 +100,7 @@
 			// lbMarca
 			// 
 			this.lbMarca.AutoSize = true;
-			this.lbMarca.Location = new System.Drawing.Point(23, 101);
+			this.lbMarca.Location = new System.Drawing.Point(22, 68);
 			this.lbMarca.Name = "lbMarca";
 			this.lbMarca.Size = new System.Drawing.Size(47, 17);
 			this.lbMarca.TabIndex = 5;
@@ -113,28 +110,9 @@
 			// 
 			this.marcasTableAdapter.ClearBeforeFill = true;
 			// 
-			// fillByToolStrip
-			// 
-			this.fillByToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-			this.fillByToolStrip.Location = new System.Drawing.Point(0, 0);
-			this.fillByToolStrip.Name = "fillByToolStrip";
-			this.fillByToolStrip.Size = new System.Drawing.Size(350, 27);
-			this.fillByToolStrip.TabIndex = 6;
-			this.fillByToolStrip.Text = "fillByToolStrip";
-			// 
-			// fillByToolStripButton
-			// 
-			this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-			this.fillByToolStripButton.Name = "fillByToolStripButton";
-			this.fillByToolStripButton.Size = new System.Drawing.Size(48, 24);
-			this.fillByToolStripButton.Text = "FillBy";
-			this.fillByToolStripButton.Click += new System.EventHandler(this.FillByToolStripButton_Click);
-			// 
 			// btnSalvar
 			// 
-			this.btnSalvar.Location = new System.Drawing.Point(243, 142);
+			this.btnSalvar.Location = new System.Drawing.Point(242, 109);
 			this.btnSalvar.Name = "btnSalvar";
 			this.btnSalvar.Size = new System.Drawing.Size(93, 37);
 			this.btnSalvar.TabIndex = 7;
@@ -145,9 +123,8 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(350, 205);
+			this.ClientSize = new System.Drawing.Size(345, 157);
 			this.Controls.Add(this.btnSalvar);
-			this.Controls.Add(this.fillByToolStrip);
 			this.Controls.Add(this.lbMarca);
 			this.Controls.Add(this.cbMarca);
 			this.Controls.Add(this.detData);
@@ -159,8 +136,6 @@
 			this.Load += new System.EventHandler(this.FrmEdicaoCarro_Load);
 			((System.ComponentModel.ISupportInitialize)(this.marcasBindingSource)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.querrysInnerJoinDataSet)).EndInit();
-			this.fillByToolStrip.ResumeLayout(false);
-			this.fillByToolStrip.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -177,8 +152,6 @@
 		private QuerrysInnerJoinDataSet querrysInnerJoinDataSet;
 		private System.Windows.Forms.BindingSource marcasBindingSource;
 		private QuerrysInnerJoinDataSetTableAdapters.MarcasTableAdapter marcasTableAdapter;
-		private System.Windows.Forms.ToolStrip fillByToolStrip;
-		private System.Windows.Forms.ToolStripButton fillByToolStripButton;
 		private System.Windows.Forms.Button btnSalvar;
 	}
 }
