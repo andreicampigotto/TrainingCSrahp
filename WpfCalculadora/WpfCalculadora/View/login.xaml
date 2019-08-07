@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="WpfCalculadora.View.login"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfCalculadora.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Margin="60,160,0,0" Grid.Row="1" VerticalAlignment="Top" Width="200" Height="30"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="60,60,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
+        <TextBox Grid.Column="1" HorizontalAlignment="Left" Height="40" Margin="60,105,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="200"/>
+
+    </Grid>
+</UserControl>
