@@ -1,0 +1,14 @@
+﻿<Window x:Class="WpfAppBla.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppBla"
+        xmlns:y="clr-namespace:WpfAppBla.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <y:ucLogin x:Name="ucLogin" sucess="UcLogin_sucess" fail="UcLogin_fail"> </y:ucLogin>
+        <y:ucGridView x:Name="ucGrid" Visibility="Hidden"></y:ucGridView>
+    </Grid>
+</Window>
