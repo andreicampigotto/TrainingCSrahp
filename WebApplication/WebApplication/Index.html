@@ -1,0 +1,82 @@
+﻿<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link href="Content/bootstrap-grid.css" rel="stylesheet">
+	<link href="Content/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+	<!--http://httpbin.org/get-->
+	<div class="container" style="margin-top:38px;color:indigo">
+
+		<div class="row">
+			<div class="col-sm-10" style="color:indigo;">
+				<input id="Button1" type="button" value="Pesquisar">
+			</div>
+			<div class="col-sm-2" style="color:lightgreen;">
+				<input id="Button2" type="button" value="Apagar">
+			</div>
+		</div>
+		<div class=" row col-sm-12" style="background-color:#b5f4b5;text-align:center;padding:0px;">
+			<div class="col-sm-2" style="text-align:right;margin: 0;">
+				<label for="Accept">Accept:</label>
+			</div>
+			<div class="col-sm-3" style="text-align:center">
+				<input type="text" id="Accept" placeholder="Text content">
+			</div>
+			<div class="col-sm-2" style="text-align:right">
+				<label for="AcceptEncoding">Accept-Encoding:</label>
+			</div>
+			<div class="col-sm-3" style="text-align:left">
+				<input type="text" id="AcceptEncoding" placeholder="Text content">
+			</div>
+		</div>
+		<div class=" row col-sm-12" style="background-color:#b5f4b5;text-align:center;padding:5px;">
+			<div class="col-sm-2" style="text-align:left;padding-right: 0;">
+				<label for="AcceptLanguage">Accept-Language:</label>
+			</div>
+			<div class="col-sm-3" style="text-align:left;margin: 0px;padding: 0px;">
+				<input type="text" id="AcceptLanguage" placeholder="Text content">
+			</div>
+			<div class="col-sm-3" style="text-align:right">
+				<label for="Host">Host:</label>
+			</div>
+			<div class="col-sm-3" style="text-align:left">
+				<input type="text" id="Host" placeholder="Text content">
+			</div>
+		</div>
+
+
+	</div>
+	<div id="blockbackground" style="background-color:rgba(255, 0, 255, 1); position:absolute;width:100%;height100%;">
+
+	</div>
+	<script src="Scripts/bootstrap.js"></script>
+	<script src="Scripts/jquery-3.4.1.js"></script>
+	<script src="Scripts/bootstrap.bundle.js"></script>
+	<script>
+		$('#blockbackground').hide();
+		$(function () {
+			$('#Button1').click(function () {
+				$('#blockbackground').show(10000);
+				$.get('https://httpbin.org/get', function (data, textStatus, jqXHR) {
+					var textJson = JSON.stringify(data, undefined, 4);
+
+					$('#Accept').val(data.headers.Accept);
+
+					$('#AcceptEncoding').val(data.headers['Accept-Encoding']);
+
+					$('#AcceptLanguage').val(data.headers.['Accept-Language']);
+
+					$('#Host').val(data.headers.Host);
+
+
+				});
+			});
+		});
+
+	</script>
+
+
+</body>
+</html>
