@@ -5,15 +5,15 @@ namespace WEBAPIRESTFULL.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<WEBAPIRESTFULL.Models.BibliotecaContextDB>
+    internal sealed class Configuration : DbMigrationsConfiguration<WEBAPIRESTFULL.Models.contextDB>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "WEBAPIRESTFULL.Models.BibliotecaContextDB";
+            ContextKey = "WEBAPIRESTFULL.Models.contextDB";
         }
 
-        protected override void Seed(WEBAPIRESTFULL.Models.BibliotecaContextDB context)
+        protected override void Seed(WEBAPIRESTFULL.Models.contextDB context)
         {
             //  This method will be called after migrating to the latest version.
 

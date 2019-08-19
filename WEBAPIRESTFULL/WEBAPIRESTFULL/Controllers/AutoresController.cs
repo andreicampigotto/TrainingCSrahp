@@ -15,109 +15,106 @@ namespace WEBAPIRESTFULL.Controllers
 {
 	[EnableCors(origins: "*", headers: "*", methods: "*")]
 	public class AutoresController : ApiController
-	{
-		private BibliotecaContextDB db = new BibliotecaContextDB();
+    {
+        private contextDB db = new contextDB();
 
-		// GET: api/Autores
-		public IQueryable<Autores> GetAutores()
-		{
-			return db.Autores.Where(x => x.Ativo == true);
-		}
+        // GET: api/Autores
+        public IQueryable<Autores> GetAutores()
+        {
+            return db.Autores;
+        }
 
-		// GET: api/Autores/5
-		[ResponseType(typeof(Autores))]
-		public IHttpActionResult GetAutores(int id)
-		{
-			Autores autores = db.Autores.Find(id);
-			if (autores == null)
-			{
-				return NotFound();
-			}
+        // GET: api/Autores/5
+        [ResponseType(typeof(Autores))]
+        public IHttpActionResult GetAutores(int id)
+        {
+            Autores autores = db.Autores.Find(id);
+            if (autores == null)
+            {
+                return NotFound();
+            }
 
-			return Ok(autores);
-		}
+            return Ok(autores);
+        }
 
-		// PUT: api/Autores/5
-		[ResponseType(typeof(void))]
-		public IHttpActionResult PutAutores(int id, Autores autores)
-		{
-			if (!ModelState.IsValid)
-			{
-				return BadRequest(ModelState);
-			}
+        // PUT: api/Autores/5
+        [ResponseType(typeof(void))]
+        public IHttpActionResult PutAutores(int id, Autores autores)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-			if (id != autores.Id)
-			{
-				return BadRequest();
-			}
+            if (id != autores.Id)
+            {
+                return BadRequest();
+            }
 
-			db.Entry(autores).State = EntityState.Modified;
+            db.Entry(autores).State = EntityState.Modified;
 
-			try
-			{
-				db.SaveChanges();
-			}
-			catch (DbUpdateConcurrencyException)
-			{
-				if (!AutoresExists(id))
-				{
-					return NotFound();
-				}
-				else
-				{
-					throw;
-				}
-			}
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!AutoresExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-			return StatusCode(HttpStatusCode.NoContent);
-		}
+            return StatusCode(HttpStatusCode.NoContent);
+        }
 
-		// POST: api/Autores
-		[ResponseType(typeof(Autores))]
-		public IHttpActionResult PostAutores(Autores autores)
-		{
-			if (!ModelState.IsValid)
-			{
-				if (ModelState.Keys.First().ToString() != "autores.Id")
-					return BadRequest(ModelState);
-			}
+        // POST: api/Autores
+        [ResponseType(typeof(Autores))]
+        public IHttpActionResult PostAutores(Autores autores)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-			db.Autores.Add(autores);
-			db.SaveChanges();
+            db.Autores.Add(autores);
+            db.SaveChanges();
 
-			return CreatedAtRoute("DefaultApi", new { id = autores.Id }, autores);
-		}
+            return CreatedAtRoute("DefaultApi", new { id = autores.Id }, autores);
+        }
 
-		// DELETE: api/Autores/5
-		[ResponseType(typeof(Autores))]
-		public IHttpActionResult DeleteAutores(int id)
-		{
-			Autores autores = db.Autores.Find(id);
+        // DELETE: api/Autores/5
+        [ResponseType(typeof(Autores))]
+        public IHttpActionResult DeleteAutores(int id)
+        {
+            Autores autores = db.Autores.Find(id);
+            if (autores == null)
+            {
+                return NotFound();
+            }
 
-			if (autores == null)
-			{
-				return NotFound();
-			}
+            db.Autores.Remove(autores);
+            db.SaveChanges();
 
-			db.Autores.Find(id).Ativo = false;
+            return Ok(autores);
+        }
 
-			db.SaveChanges();
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-			return Ok(autores);
-		}
-
-		protected override void Dispose(bool disposing)
-		{
-			if (disposing)
-			{
-				db.Dispose();
-			}
-			base.Dispose(disposing);
-		}
-
-		private bool AutoresExists(int id)
-		{
-			return db.Autores.Count(e => e.Id == id) > 0;
-		}
-	}
+        private bool AutoresExists(int id)
+        {
+            return db.Autores.Count(e => e.Id == id) > 0;
+        }
+    }
 }

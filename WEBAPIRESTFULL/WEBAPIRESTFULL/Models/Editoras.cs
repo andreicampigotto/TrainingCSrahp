@@ -17,11 +17,26 @@ namespace WEBAPIRESTFULL.Models
         public int Id { get; set; }
 
         [Required]
-        [StringLength(200)]
+        [StringLength(64)]
         public string Nome { get; set; }
 
-        [StringLength(1000)]
+        [Required]
+        [StringLength(512)]
         public string Descricao { get; set; }
+
+        public bool Ativo { get; set; }
+
+        public int IdCriacao { get; set; }
+
+        public int? IdAlteracao { get; set; }
+
+        public DateTime DataCriacao { get; set; }
+
+        public DateTime? DataAlteracao { get; set; }
+
+        public virtual Usuarios Usuarios { get; set; }
+
+        public virtual Usuarios Usuarios1 { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Livros> Livros { get; set; }

@@ -1,28 +1,5 @@
        /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
 	   jQuery(document).ready(function(){
-		/* Indica que o evento submit do form irá realizar esta ação agora*/
-		jQuery('#formusuarios').submit(function(){
-			/* Neste contesto 'this' representa o form deste ID  #myform */                
-			var dados = $(this).serialize();
-
-			 var settings = {
-			  "crossDomain": true,
-			  "url": "http://localhost:59271/Api/Autores",
-			  "method": "POST",
-			  "headers": {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Accept": "*/*"
-			  },
-			  "data": dados
-			}
-
-			$.ajax(settings).done(function (response) {
-			    GetMethod();
-			});
-			
-			return false;
-		});
-		
 		jQuery('#bntSalvar').click(function(){
 			 Editing();
 			 
@@ -51,7 +28,7 @@
 			$('#Ativo select').val("true");
 		});
 		
-		GetMethod();
+		GetMethod(null);
 	});
 	
 	function GetByID(id){
@@ -94,7 +71,7 @@
 		}
 
 		$.ajax(settings).done(function (response) {
-		    GetMethod();
+		    GetMethod(null);
 		});
 	}
 	
@@ -110,11 +87,11 @@
 			}
 
 			$.ajax(settings).done(function (response) {
-			    GetMethod();
+			    GetMethod(null);
 			});
 	}
     
-    function GetMethod(){
+    function GetMethod(object){
 			var settings = {
 				"async": true,
 				"crossDomain": true,

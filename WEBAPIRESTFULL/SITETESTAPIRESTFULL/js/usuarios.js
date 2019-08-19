@@ -1,28 +1,5 @@
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
   	jQuery(document).ready(function(){
-		/* Indica que o evento submit do form irá realizar esta ação agora*/
-		jQuery('#formusuarios').submit(function(){
-			/* Neste contesto 'this' representa o form deste ID  #myform */                
-			var dados = $(this).serialize();
-
-			 var settings = {
-			  "crossDomain": true,
-			  "url": "https://localhost:59271/Api/Usuarios",
-			  "method": "POST",
-			  "headers": {
-				"Content-Type": "application/x-www-form-urlencoded",
-				"Accept": "*/*"
-			  },
-			  "data": dados
-			}
-
-			$.ajax(settings).done(function (response) {
-			    GetMethod();
-			});
-			
-			return false;
-		});
-		
 		jQuery('#bntSalvar').click(function(){
 			 Editing();
 			 
@@ -50,13 +27,12 @@
 			$('#Senha').val("");
 			$('#Ativo select').val("true");
 		});
-		
-		GetMethod();
+		GetMethod(null);
 	});
 	
 	function GetByID(id){
-        $('#bntSubmit').hide();
-		$('#bntSalvar').show();
+        //$('#bntSubmit').hide();
+		//$('#bntSalvar').show();
 		$('#bntCancelar').show();
 		
         var settings = {
@@ -81,26 +57,6 @@
 		
 	}
 	
-	function Editing(){
-		var dados = $('#formusuarios').serialize();
-		var id = $('#Id').val();
-
-		 var settings = {
-		  "crossDomain": true,
-		  "url": "https://localhost:44317/Api/Usuarios/"+id,
-		  "method": "PUT",
-		  "headers": {
-			"Content-Type": "application/x-www-form-urlencoded",
-			"Accept": "*/*"
-		  },
-		  "data": dados
-		}
-
-		$.ajax(settings).done(function (response) {
-		    GetMethod();
-		});
-	}
-	
 	function Deleting(id){
 			 var settings = {
 			  "crossDomain": true,
@@ -113,11 +69,11 @@
 			}
 
 			$.ajax(settings).done(function (response) {
-			    GetMethod();
+			    GetMethod(null);
 			});
 	}
     
-    function GetMethod(){
+    function GetMethod(object){
 			var settings = {
 				"async": true,
 				"crossDomain": true,
