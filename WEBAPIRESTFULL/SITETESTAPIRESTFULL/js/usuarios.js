@@ -1,4 +1,3 @@
-
     /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
   	jQuery(document).ready(function(){
 		/* Indica que o evento submit do form irá realizar esta ação agora*/
@@ -8,7 +7,7 @@
 
 			 var settings = {
 			  "crossDomain": true,
-			  "url": "https://localhost:44317/Api/Usuarios",
+			  "url": "https://localhost:59271/Api/Usuarios",
 			  "method": "POST",
 			  "headers": {
 				"Content-Type": "application/x-www-form-urlencoded",

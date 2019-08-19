@@ -7,7 +7,7 @@ namespace WEBAPIRESTFULL.Models
 {
 	public class UserControls
 	{
-		public bool? Ativo { get; set; }
+		public bool? Ativo { get; set; } = true;
 
 		public int? UsuInc { get; set; } = 0;
 
