@@ -43,16 +43,6 @@ namespace WEBAPIRESTFULL.Models
         [StringLength(16)]
         public string Senha { get; set; }
 
-        public bool Ativo { get; set; }
-
-        public int IdCriacao { get; set; }
-
-        public int? IdAlteracao { get; set; }
-
-        public DateTime DataCriacao { get; set; }
-
-        public DateTime? DataAlteracao { get; set; }
-
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Autores> Autores { get; set; }

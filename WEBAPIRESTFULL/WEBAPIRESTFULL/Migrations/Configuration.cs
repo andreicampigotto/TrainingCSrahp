@@ -10,7 +10,6 @@ namespace WEBAPIRESTFULL.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "WEBAPIRESTFULL.Models.contextDB";
         }
 
         protected override void Seed(WEBAPIRESTFULL.Models.contextDB context)

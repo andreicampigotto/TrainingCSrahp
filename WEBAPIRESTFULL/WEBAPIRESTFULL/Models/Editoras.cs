@@ -6,7 +6,7 @@ namespace WEBAPIRESTFULL.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class Editoras
+    public partial class Editoras : userControls
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Editoras()
@@ -23,16 +23,6 @@ namespace WEBAPIRESTFULL.Models
         [Required]
         [StringLength(512)]
         public string Descricao { get; set; }
-
-        public bool Ativo { get; set; }
-
-        public int IdCriacao { get; set; }
-
-        public int? IdAlteracao { get; set; }
-
-        public DateTime DataCriacao { get; set; }
-
-        public DateTime? DataAlteracao { get; set; }
 
         public virtual Usuarios Usuarios { get; set; }
 
