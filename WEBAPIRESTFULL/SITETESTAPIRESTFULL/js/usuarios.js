@@ -1,8 +1,8 @@
 /* Ao carregar o documento o mesmo inicia o conteudo desde script*/
 jQuery(document).ready(function(){
 
-	jQuery('#bntCancelar').click(function(){
-		$('#bntCancelar').hide();
+	jQuery('#btnCancelar').click(function(){
+		$('#btnCancelar').hide();
 		
 		$('#Id').val("");
 		$('#Nome').val("");
@@ -14,33 +14,6 @@ jQuery(document).ready(function(){
 
 	GetMethod(null);
 });
-
-function GetByID(id){
-	//$('#bntSubmit').hide();
-	//$('#bntSalvar').show();
-	$('#bntCancelar').show();
-	
-	var settings = {
-		"async": true,
-		"crossDomain": true,
-		"url": "http://localhost:59271/Api/Usuarios/"+id,
-		"method": "GET",
-			"headers": {
-				"Content-Type": "application/json",
-				"Accept": "*/*"
-			}
-		}
-
-		$.ajax(settings).done(function (response) {
-			$('#Id').val(response.Id);
-			$('#Nome').val(response.Nome);
-			$('#Login').val(response.Login);
-			$('#Senha').val(response.Senha);
-			$('#Email').val(response.Email);
-			$('#Ativo select').val(response.Ativo);
-		});
-	
-}
 
 function Potator(object){
 	alert('Teste potator pulgmatica');

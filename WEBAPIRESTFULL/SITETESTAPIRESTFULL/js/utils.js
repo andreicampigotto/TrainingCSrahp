@@ -82,6 +82,7 @@ function SetGridClickEvents(){
             $('input[name="' + index + '"]').val(value);
 
         });
+        $('btnCancelar').show();
     });
 
   });

@@ -361,12 +361,7 @@
           </li>
           <li class="treeview">
             <a href="editoras.html">
-              <i class="fa   fa-cog"></i> <span>Editoras</span>
-            </a>
-          </li>
-          <li class="treeview">
-            <a href="index.html">
-              <i class="fa   fa-cog"></i> <span>ADMINISTRAÇÃO</span>
+              <i class="fa   fa-cog"></i> <span>editoras</span>
             </a>
           </li>
           <li class="treeview">
@@ -419,12 +414,13 @@
 	  
       <section class="content" style="margin-bottom:0px;padding-bottom:0px;min-height:0px;">
         <!-- Small boxes (Stat box) -->
-        <form  name="formedotoras" id="formedotoras"  class="box box-primary  collapsed-box" >
+        <form call="GetMethod" send-post="Editoras" class="box box-primary  collapsed-box form-post" >
           <div class="box-header with-border">
             <h3 class="box-title">Editoras</h3>
 			
 			<div class="box-tools pull-right">
-				<button type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
+        <button id= "collapse-btn"
+         type="button" class="btn btn-block btn-primary" data-widget="collapse"><i class="fa fa-plus"></i></button>
 			</div>
           </div>
           <!-- hidden field -->
@@ -436,41 +432,17 @@
                 <label for="Nome">Nome</label>
                 <input type="text" class="form-control" id="Nome" name="Nome" placeholder="Seu nome completo"/>
               </div>
-              <div class="form-group">
-                <label>Ativo</label>
-                <select name="Ativo" id="Ativo" class="form-control select2" style="width: 100%;">
-                  <option value="true" selected="selected">Ativo</option>
-                  <option value="false">Inativo</option>
-                </select>
-              </div>
-
-
             </div>
             <div class="col-md-6">
 			  <div class="form-group">
-                <label for="Login">Login</label>
-                <input type="Text" class="form-control" name="Login" id="Login" placeholder="Login"/>
-              </div>
-              <div class="form-group">
-                <label for="Senha">Senha</label>
-                <input type="password" class="form-control" name="Senha" id="Senha" placeholder="Senha"/>
-              </div>
-              <div class="form-group">
-                <label>E-mail:</label>
-                <div class="input-group">
-                  <div class="input-group-addon">
-                    <i class="fa fa-at"></i>
-                  </div>
-                  <input type="text" name="Email" id="Email" class="form-control" data-inputmask='"mask": ""' data-mask />
-                </div>
-                <!-- /.input group -->
+                <label for="Descricao">Descrição</label>
+                <input type="Text" class="form-control" name="Descricao" id="Descricao" placeholder="Descrição"/>
               </div>
             </div>
             <!-- /.box-body -->
-
             <div class="box-footer">
               <button type="submit" id="bntSubmit" class="btn btn-primary">Finalizar cadastro</button>
-			  <button type="button" id="bntSalvar" class="btn btn-primary" style="display:none;">Salvar cadastro</button>
+			  <button type="button" id="bntSalvar" class="btn btn-primary"   style="display:none;">Salvar cadastro</button>
 			  <button type="button" id="bntCancelar" class="btn btn-primary" style="display:none;">Cancelar cadastro</button>
             </div>
           </div>
@@ -501,9 +473,7 @@
                 <tr>
                   <th data-options="field:'Id',width:100">ID</th>
                   <th>Nome</th>
-				  <th>Login</th>
-                  <th>E-mail</th>
-				  <th>login</th>
+				  <th>Descrição</th>
                   <th>Opções</th>
                 </tr>
               </table>
@@ -745,8 +715,8 @@
 	  <!-- AdminLTE for demo purposes -->
 	  <script src="dist/js/demo.js"></script>
 	  <!-- Custom page script sections -->
+	  <script src="js/utils.js"></script>
 	  <script src="js/editoras.js"></script>
   </scriptsection>
 </body>
-
 </html>

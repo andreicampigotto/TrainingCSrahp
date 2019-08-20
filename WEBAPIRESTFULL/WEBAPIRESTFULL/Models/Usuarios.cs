@@ -43,6 +43,10 @@ namespace WEBAPIRESTFULL.Models
         [StringLength(16)]
         public string Senha { get; set; }
 
+		[Required]
+		[StringLength(50)]
+		public string Email { get; set; }
+
 		[JsonIgnore]
 		[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Autores> Autores { get; set; }
