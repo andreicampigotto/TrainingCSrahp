@@ -31,7 +31,7 @@ namespace WEBAPIRESTFULL.Controllers
             Autores autores = db.Autores.Find(id);
             if (autores == null)
             {
-                return NotFound();
+                return db.Autores.Where(x => x.Ativo == true);
             }
 
             return Ok(autores);

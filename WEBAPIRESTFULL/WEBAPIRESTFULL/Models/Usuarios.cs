@@ -9,7 +9,7 @@ namespace WEBAPIRESTFULL.Models
     using System.Web.Http.Cors;
 
     
-    public partial class Usuarios
+    public partial class Usuarios : userControls
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Usuarios()

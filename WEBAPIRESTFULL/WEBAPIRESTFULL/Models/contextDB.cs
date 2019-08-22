@@ -5,7 +5,7 @@ namespace WEBAPIRESTFULL.Models
 	using System.ComponentModel.DataAnnotations.Schema;
 	using System.Linq;
 
-	public partial class contextDB : DbContext
+	public partial class contextDB : DbContext 
 	{
 		public contextDB()
 			: base("name=contextDB")

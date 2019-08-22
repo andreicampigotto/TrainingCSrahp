@@ -16,29 +16,28 @@ namespace WEBAPIRESTFULL.Controllers
 	[EnableCors(origins:"*",headers:"*",methods:"*")]
     public class UsuariosController : ApiController
     {
-        private contextDB db = new contextDB();
+        private readonly contextDB db = new contextDB();
 
-        // GET: api/Usuarios
-        public IQueryable<Usuarios> GetUsuarios()
-        {
-            return db.Usuarios;
-        }
+		// GET: api/Usuarios
+		public IQueryable<Usuarios> GetUsuarios()
+		{
+			return db.Usuarios.Where(x => x.Ativo == true);
+		}
 
-        // GET: api/Usuarios/5
-        [ResponseType(typeof(Usuarios))]
-        public IHttpActionResult GetUsuarios(int id)
-        {
-            Usuarios usuarios = db.Usuarios.Find(id);
-            if (usuarios == null)
-            {
-                return NotFound();
-            }
+		// GET: api/Usuarios
+		[ResponseType(typeof(Usuarios))]
+		public IQueryable<Usuarios> GetUsuarios(int Id)
+		{
+			Usuarios usuarios = db.Usuarios.Find(Id);
+			if (usuarios == null)
+			{
+				return NotFound();
+			}
 
-            return Ok(usuarios);
-        }
-
-        // PUT: api/Usuarios/5
-        [ResponseType(typeof(void))]
+			return Ok(usuarios);
+		}
+		// PUT: api/Usuarios/5
+		[ResponseType(typeof(void))]
         public IHttpActionResult PutUsuarios(int id, Usuarios usuarios)
         {
             if (!ModelState.IsValid)
