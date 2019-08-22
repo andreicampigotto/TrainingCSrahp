@@ -19,9 +19,9 @@ namespace WEBAPIRESTFULL.Controllers
         private contextDB db = new contextDB();
 
 		// GET: api/Autores
-		public IQueryable<Usuarios> GetUsuarios()
+		public IQueryable<Autores> GetAutores()
 		{
-			return db.Usuarios.Where(x => x.Ativo == true);
+			return db.Autores.Where(x => x.Ativo == true);
 		}
 		// GET: api/Autores/5
 		[ResponseType(typeof(Autores))]
@@ -77,6 +77,7 @@ namespace WEBAPIRESTFULL.Controllers
         {
             if (!ModelState.IsValid)
             {
+
                 return BadRequest(ModelState);
             }
 
