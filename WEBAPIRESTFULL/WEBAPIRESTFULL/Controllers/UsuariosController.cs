@@ -24,11 +24,12 @@ namespace WEBAPIRESTFULL.Controllers
 			return db.Usuarios.Where(x => x.Ativo == true);
 		}
 
-		// GET: api/Usuarios
+		// GET: api/Usuarios/5
 		[ResponseType(typeof(Usuarios))]
-		public IQueryable<Usuarios> GetUsuarios(int Id)
+		public IHttpActionResult GetUsuarios(int Id)
 		{
 			Usuarios usuarios = db.Usuarios.Find(Id);
+
 			if (usuarios == null)
 			{
 				return NotFound();

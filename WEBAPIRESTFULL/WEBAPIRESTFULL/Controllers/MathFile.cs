@@ -9,11 +9,11 @@ namespace WEBAPIRESTFULL.Controllers
 {
 	public class MathFile : Single<MathFile>
 	{
-		contextDB bibliotecacontextDB = new contextDB();
+		contextDB bibliotecaContextDB = new contextDB();
 		public int QuantidadeUsuarios()
 		{
-			return bibliotecacontextDB
-				.Usuarios.Count();
+			return bibliotecaContextDB
+				   .Usuarios.Count();
 		}
 	}
 }

@@ -18,24 +18,23 @@ namespace WEBAPIRESTFULL.Controllers
     {
         private contextDB db = new contextDB();
 
-        // GET: api/Autores
-        public IQueryable<Autores> GetAutores()
+		// GET: api/Autores
+		public IQueryable<Usuarios> GetUsuarios()
+		{
+			return db.Usuarios.Where(x => x.Ativo == true);
+		}
+		// GET: api/Autores/5
+		[ResponseType(typeof(Autores))]
+        public IHttpActionResult GetAutores(int Id)
         {
-            return db.Autores;
-        }
+            Autores autores = db.Autores.Find(Id);
+			if (autores == null)
+			{
+				return NotFound();
+			}
 
-        // GET: api/Autores/5
-        [ResponseType(typeof(Autores))]
-        public IHttpActionResult GetAutores(int id)
-        {
-            Autores autores = db.Autores.Find(id);
-            if (autores == null)
-            {
-                return db.Autores.Where(x => x.Ativo == true);
-            }
-
-            return Ok(autores);
-        }
+			return Ok(autores);
+		}
 
         // PUT: api/Autores/5
         [ResponseType(typeof(void))]

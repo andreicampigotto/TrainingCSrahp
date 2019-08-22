@@ -1,4 +1,5 @@
 var urlBaseAPi = "http://localhost:59271/Api/"
+
 function buildUrlApi(sendpost, Id = ''){
     if(Id !== '')
         Id = '/' + Id;
@@ -23,7 +24,7 @@ jQuery(document).ready(function(){
 
        var settings = {
         "crossDomain": true,
-        "url": buildUrlApi( sendpost, Id),
+        "url": buildUrlApi(sendpost, Id),
         "method": method,
         "headers": {
           "Content-Type": "application/x-www-form-urlencoded",
@@ -35,15 +36,18 @@ jQuery(document).ready(function(){
       $.ajax(settings).done(function (response) {
          window[callStr](response);
       });
+      $.each(this,function(index,value){
+        $('[name=\''+value.name+'\']').val("");
+      });
       
       return false;
   });
   jQuery('.btn-cancel-form').click(function(){
     var form = $(this).parent().parent().parent()[0];
     
-    $.each(form,function(index,value)){
+    $.each(form,function(index,value){
         $('[name=\'' + value.name + '\']').val("");
-    }
+    });
   });
 });
 
@@ -85,7 +89,7 @@ function SetGridClickEvents(){
       $.ajax(settings).done(function (response) {
         $.each(response,function(index, value){
             $('input[name="' + index + '"]').val(value);
-
+            $('select[name="'+ index + '"]').val(value);
         });
         $('btnCancelar').show();
     });

@@ -3,7 +3,7 @@ namespace WEBAPIRESTFULL.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class First : DbMigration
+    public partial class Iniciand : DbMigration
     {
         public override void Up()
         {
@@ -17,7 +17,7 @@ namespace WEBAPIRESTFULL.Migrations
                         Ativo = c.Boolean(nullable: false),
                         IdCriacao = c.Int(nullable: false),
                         IdAlteracao = c.Int(),
-                        DataCriacao = c.DateTime(nullable: false),
+                        DataCriacao = c.DateTime(),
                         DataAlteracao = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -60,7 +60,7 @@ namespace WEBAPIRESTFULL.Migrations
                         Ativo = c.Boolean(nullable: false),
                         IdCriacao = c.Int(nullable: false),
                         IdAlteracao = c.Int(),
-                        DataCriacao = c.DateTime(nullable: false),
+                        DataCriacao = c.DateTime(),
                         DataAlteracao = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -83,7 +83,7 @@ namespace WEBAPIRESTFULL.Migrations
                         Ativo = c.Boolean(nullable: false),
                         IdCriacao = c.Int(nullable: false),
                         IdAlteracao = c.Int(),
-                        DataCriacao = c.DateTime(nullable: false),
+                        DataCriacao = c.DateTime(),
                         DataAlteracao = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -100,6 +100,7 @@ namespace WEBAPIRESTFULL.Migrations
                         Nome = c.String(nullable: false, maxLength: 64, unicode: false),
                         Login = c.String(nullable: false, maxLength: 32, unicode: false),
                         Senha = c.String(nullable: false, maxLength: 16, unicode: false),
+                        Email = c.String(nullable: false, maxLength: 50),
                         Ativo = c.Boolean(nullable: false),
                         IdCriacao = c.Int(nullable: false),
                         IdAlteracao = c.Int(),
@@ -118,7 +119,7 @@ namespace WEBAPIRESTFULL.Migrations
                         Ativo = c.Boolean(nullable: false),
                         IdCriacao = c.Int(nullable: false),
                         IdAlteracao = c.Int(),
-                        DataCriacao = c.DateTime(nullable: false),
+                        DataCriacao = c.DateTime(),
                         DataAlteracao = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
@@ -139,7 +140,7 @@ namespace WEBAPIRESTFULL.Migrations
                         Ativo = c.Boolean(nullable: false),
                         IdCriacao = c.Int(nullable: false),
                         IdAlteracao = c.Int(),
-                        DataCriacao = c.DateTime(nullable: false),
+                        DataCriacao = c.DateTime(),
                         DataAlteracao = c.DateTime(),
                     })
                 .PrimaryKey(t => t.Id)
