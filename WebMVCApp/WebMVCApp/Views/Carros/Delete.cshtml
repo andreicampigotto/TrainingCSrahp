@@ -1,0 +1,73 @@
+﻿@model WebMVCApp.Models.Carro
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Carro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Plca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Plca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ativo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioCriacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioCriacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UsuarioEdicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UsuarioEdicao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataCriacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataCriacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEdicao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataEdicao)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
